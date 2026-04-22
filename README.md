@@ -12,7 +12,7 @@
 
 | Aula                               | Link |
 |------------------------------------|------|
-| Introdução à Lógica de Programação |      |
+| Resumo: Banco de Dados             |      |
 
 ---
 
