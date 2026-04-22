@@ -1,5 +1,4 @@
-# 📘 Introdução à Programação
-
+# 📘 Banco de Dados I
 
 **Turma:** 1ª Ano DSB – Tarde – CEPK  
 **Professor:** Cesar Mauricio Chauchuty  
@@ -18,10 +17,10 @@
 
 ## 🛠 Ferramentas
 
-| Ferramenta       | Finalidade                                     | Link                       |
-|-----------------|-----------------------------------------------|----------------------------|
-| Portugol        | Ambiente online para escrever, testar e executar algoritmos em Portugol | [Acessar](https://portugol.dev/) | 
-| Excalidraw      | Criação de fluxogramas e diagramas visuais   | [Acessar](https://excalidraw.com/) |
+| Ferramenta                | Finalidade                                     | Link                       |
+|---------------------------|-----------------------------------------------|----------------------------|
+| OneCompiler(Mysql)        | Ambiente online para escrever, testar e executar algoritmos em Portugol | [Acessar](https://onecompiler.com/mysql) | 
+| Excalidraw                | Criação de fluxogramas e diagramas visuais   | [Acessar](https://excalidraw.com/) |
 
 ---
 
