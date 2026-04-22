@@ -12,7 +12,7 @@
 
 | Aula                               | Link |
 |------------------------------------|------|
-| Resumo: Banco de Dados             |      |
+| Resumo: Banco de Dados             |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/resumo-bd.md)   |
 
 ---
 
