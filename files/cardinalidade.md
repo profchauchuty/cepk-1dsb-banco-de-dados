@@ -1,362 +1,117 @@
-# Banco de Dados — Entidades, Atributos e Cardinalidade
-
-# O que é uma entidade?
-
-Entidade é qualquer objeto do mundo real que pode ser representado dentro do banco de dados.
-
-Normalmente, uma entidade se transforma em uma tabela.
+# Modelagem de Dados Relacional: Entidades, Atributos e Cardinalidade.
 
 ---
 
-## Exemplos de entidades
+# 1. Entidade (O Objeto)
 
-| Entidade | Representa |
-|---|---|
-| FUNCIONARIO | Funcionários da empresa |
-| CLIENTE | Clientes do sistema |
-| PRODUTO | Produtos cadastrados |
-| ALUNO | Alunos da escola |
-| DISCIPLINA | Disciplinas do curso |
-| EMPRESA | Empresas cadastradas |
+Uma Entidade representa um objeto do mundo real (físico ou abstrato).
 
----
+## Classificação
+- Físicas: CLIENTE, PRODUTO, CARRO
+- Abstratas: VENDA, MATRÍCULA, EMPRÉSTIMO
 
-# O que é um atributo?
-
-Atributo é uma característica da entidade.
-
-Normalmente, um atributo se transforma em uma coluna da tabela.
+> Regra: Toda entidade vira uma TABELA no banco de dados.
 
 ---
 
-## Exemplos de atributos
+# 2. Atributo
 
-| Atributo | Representa |
-|---|---|
-| ID | Identificador |
-| NOME | Nome da pessoa |
-| CPF | Documento |
-| EMAIL | E-mail |
-| TELEFONE | Número telefônico |
-| DATA_NASCIMENTO | Data de nascimento |
+São propriedades (características) que descrevem uma entidade.
 
----
-
-## Representação de atributos
-
-```text
-[FUNCIONARIO]
-
-- ID
-- NOME
-- CPF
-- EMAIL
-```
+## Tipos
+- Identificador (PK): ID, CPF
+- Simples: NOME, PREÇO
+- Composto: ENDEREÇO (RUA, CEP, NÚMERO)
+- Multivalorado: TELEFONE
+- Derivado: IDADE (DATA_NASCIMENTO)
 
 ---
 
-# Exemplo completo
+# 3. Cardinalidade
 
-## Entidade
+Define quantos registros podem se relacionar.
 
-```text
-[ALUNO]
-```
-
-## Atributos
-
-```text
-- ID
-- NOME
-- CPF
-- DATA_NASCIMENTO
-```
-
----
-
-## Código SQL
-
-```sql
-CREATE TABLE ALUNO (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100),
-    CPF VARCHAR(14),
-    DATA_NASCIMENTO DATE
-);
-```
-
----
-
-# O que é cardinalidade?
-
-Cardinalidade é a regra que define como duas entidades se relacionam.
-
-Cardinalidade determina:
-
-- quantos registros podem se relacionar
-- se o relacionamento é obrigatório
-- se os registros podem se repetir
-
----
-
-## Exemplos
-
-> - Um funcionário POSSUI quantos armários?
-> - Um armário PERTENCE a quantos funcionários?
-> - Um aluno CURSA quantas disciplinas?
-> - Uma disciplina POSSUI quantos alunos?
-> - Um cliente POSSUI quantos pedidos?
-> - Um pedido PERTENCE a quantos clientes?
-
----
-
-# Entendendo `(1:1)`, `(1:N)` e `(0:N)`
-
-A estrutura funciona assim:
-
-```text
-(MÍNIMO:MÁXIMO)
-```
-
-| Parte | Significado |
-|---|---|
-| Primeiro valor | Quantidade mínima |
-| Segundo valor | Quantidade máxima |
-
----
-
-# Primeiro valor — mínimo
-
+## Regras
 | Valor | Significado |
-|---|---|
-| `0` | Relacionamento opcional |
-| `1` | Relacionamento obrigatório |
+|------|-------------|
+| 0 | Opcional |
+| 1 | Obrigatório |
+| N | Muitos |
 
 ---
 
-# Segundo valor — máximo
+# 4. Tipos de Relacionamento
 
-| Valor | Significado |
-|---|---|
-| `1` | Apenas um relacionamento |
-| `N` | Vários relacionamentos |
-
----
-
-# Exemplos rápidos
-
-| Representação | Significado |
-|---|---|
-| `(1:1)` | Obrigatório e único |
-| `(0:1)` | Opcional e único |
-| `(1:N)` | Obrigatório e múltiplo |
-| `(0:N)` | Opcional e múltiplo |
-
----
-
-# Tipos de cardinalidade
-
-| Cardinalidade | Significado | Exemplo |
-|---|---|---|
-| `1:1` | Um para um | Um funcionário POSSUI um armário |
-| `1:N` | Um para muitos | Uma empresa POSSUI vários funcionários |
-| `N:N` | Muitos para muitos | Um aluno CURSA várias disciplinas |
-| `0:1` | Zero ou um | Um usuário POSSUI uma foto ou nenhuma |
-| `0:N` | Zero ou muitos | Um cliente POSSUI vários pedidos ou nenhum |
-
----
-
-# 1:1 — Um para um
-
-| Campo | Descrição |
-|---|---|
-| Explicação | Um funcionário POSSUI apenas um armário. Um armário PERTENCE a apenas um funcionário. |
-| Representação | `(FUNCIONARIO) (1:1) ---------- (1:1) (ARMARIO)` |
-
----
-
-## Código SQL
+## 4.1 1:1 (Um para Um)
+Um registro tem apenas um correspondente.
 
 ```sql
-CREATE TABLE FUNCIONARIO (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100)
+SQL:
+CREATE TABLE USUARIO (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NOME VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE ARMARIO (
+CREATE TABLE PERFIL (
     ID INT PRIMARY KEY,
-    NUMERO VARCHAR(10),
-    FK_FUNCIONARIO INT UNIQUE,
-
-    FOREIGN KEY (FK_FUNCIONARIO)
-        REFERENCES FUNCIONARIO(ID)
+    BIO TEXT,
+    FK_USUARIO INT UNIQUE,
+    FOREIGN KEY (FK_USUARIO) REFERENCES USUARIO(ID)
 );
 ```
 
 ---
 
-# 1:N — Um para muitos
-
-| Campo | Descrição |
-|---|---|
-| Explicação | Uma empresa POSSUI vários funcionários. Um funcionário PERTENCE a apenas uma empresa. |
-| Representação | `(EMPRESA) (1:1) ---------- (1:N) (FUNCIONARIO)` |
-
----
-
-## Código SQL
+## 4.2 1:N (Um para Muitos)
+Um registro pai pode ter vários filhos.
 
 ```sql
-CREATE TABLE EMPRESA (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100)
+SQL:
+CREATE TABLE DEPARTAMENTO (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NOME_DEP VARCHAR(50)
 );
 
 CREATE TABLE FUNCIONARIO (
     ID INT PRIMARY KEY,
     NOME VARCHAR(100),
-    FK_EMPRESA INT NOT NULL,
-
-    FOREIGN KEY (FK_EMPRESA)
-        REFERENCES EMPRESA(ID)
+    FK_DEPARTAMENTO INT NOT NULL,
+    FOREIGN KEY (FK_DEPARTAMENTO) REFERENCES DEPARTAMENTO(ID)
 );
 ```
 
 ---
 
-# N:N — Muitos para muitos
-
-| Campo | Descrição |
-|---|---|
-| Explicação | Um aluno CURSA várias disciplinas. Uma disciplina POSSUI vários alunos. |
-| Representação | `(ALUNO) (1:N) ---------- (N:1) (DISCIPLINA)` |
-
----
-
-## Código SQL
+## 4.3 N:N (Muitos para Muitos)
+Precisa de tabela intermediária.
 
 ```sql
-CREATE TABLE ALUNO (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100)
-);
-
-CREATE TABLE DISCIPLINA (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100)
-);
-
+SQL:
 CREATE TABLE MATRICULA (
     FK_ALUNO INT,
     FK_DISCIPLINA INT,
-
+    DATA_MATRICULA DATE,
     PRIMARY KEY (FK_ALUNO, FK_DISCIPLINA),
-
-    FOREIGN KEY (FK_ALUNO)
-        REFERENCES ALUNO(ID),
-
-    FOREIGN KEY (FK_DISCIPLINA)
-        REFERENCES DISCIPLINA(ID)
+    FOREIGN KEY (FK_ALUNO) REFERENCES ALUNO(ID),
+    FOREIGN KEY (FK_DISCIPLINA) REFERENCES DISCIPLINA(ID)
 );
 ```
 
 ---
 
-## Importante
+# 5. Como identificar cardinalidade
 
-> Relacionamentos `N:N` precisam de uma tabela intermediária.
+- Cliente faz quantos pedidos? → muitos (N)
+- Pedido pertence a quantos clientes? → um (1)
 
-```text
-(ALUNO) (1:N) ---------- (N:1) (MATRICULA) (1:N) ---------- (N:1) (DISCIPLINA)
-```
-
----
-
-# 0:1 — Zero ou um
-
-| Campo | Descrição |
-|---|---|
-| Explicação | Um usuário POSSUI uma foto ou nenhuma. Uma foto PERTENCE a apenas um usuário. |
-| Representação | `(USUARIO) (0:1) ---------- (1:1) (FOTO)` |
+Resultado: 1:N
 
 ---
 
-## Código SQL
+# 6. Resumo de Constraints
 
-```sql
-CREATE TABLE USUARIO (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100)
-);
-
-CREATE TABLE FOTO (
-    ID INT PRIMARY KEY,
-    ARQUIVO VARCHAR(100),
-    FK_USUARIO INT UNIQUE,
-
-    FOREIGN KEY (FK_USUARIO)
-        REFERENCES USUARIO(ID)
-);
-```
-
----
-
-# 0:N — Zero ou muitos
-
-| Campo | Descrição |
-|---|---|
-| Explicação | Um cliente POSSUI vários pedidos ou nenhum. Um pedido PERTENCE a apenas um cliente. |
-| Representação | `(CLIENTE) (0:1) ---------- (1:N) (PEDIDO)` |
-
----
-
-## Código SQL
-
-```sql
-CREATE TABLE CLIENTE (
-    ID INT PRIMARY KEY,
-    NOME VARCHAR(100)
-);
-
-CREATE TABLE PEDIDO (
-    ID INT PRIMARY KEY,
-    VALOR FLOAT,
-    FK_CLIENTE INT,
-
-    FOREIGN KEY (FK_CLIENTE)
-        REFERENCES CLIENTE(ID)
-);
-```
-
----
-
-# Comparação geral
-
-| Cardinalidade | Representação | Exemplo |
-|---|---|---|
-| `1:1` | `(1:1) ---------- (1:1)` | Funcionário → Armário |
-| `1:N` | `(1:1) ---------- (1:N)` | Empresa → Funcionário |
-| `N:N` | `(1:N) ---------- (N:1)` | Aluno → Disciplina |
-| `0:1` | `(0:1) ---------- (1:1)` | Usuário → Foto |
-| `0:N` | `(0:1) ---------- (1:N)` | Cliente → Pedido |
-
----
-
-# Como identificar a cardinalidade
-
-## Faça estas perguntas
-
-> - Quantos registros podem se relacionar?
-> - O relacionamento é obrigatório?
-> - Os registros podem se repetir?
-> - Ambos os lados podem possuir vários relacionamentos?
-
----
-
-# Resumo
-
-| Conceito | Definição |
-|---|---|
-| Entidade | Objeto do mundo real |
-| Atributo | Característica da entidade |
-| Cardinalidade | Forma como entidades se relacionam |
+- PRIMARY KEY: identifica registro
+- FOREIGN KEY: cria relacionamento
+- NOT NULL: obrigatório
+- UNIQUE: único
+- DEFAULT: valor padrão
