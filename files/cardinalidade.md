@@ -179,7 +179,7 @@ CREATE TABLE CARTAO_BIBLIOTECA (
 Uma turma possui vários alunos.
 
 ```text
-[TURMA] --- (1,1) --- <POSSUI> --- (1,N) --- [ALUNO]
+[TURMA] --- (1,N) --- <POSSUI> --- (1,1) --- [ALUNO]
 ```
 
 Leitura:
