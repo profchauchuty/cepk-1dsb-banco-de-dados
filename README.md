@@ -11,9 +11,10 @@
 
 | Aula                               | Link |
 |------------------------------------|------|
-| Resumo: Banco de Dados             |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/resumo-bd.md)   |
-| Atividade: Desafio Jogos Escolares |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/atividade-1.md) |
-| JOIN e WHERE no SQL                |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/join-sql.md) |
+| Resumo: Banco de Dados             |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/resumo-bd.md)   |
+| Atividade: Desafio Jogos Escolares |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/atividade-1.md) |
+| JOIN e WHERE no SQL                |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/join-sql.md) |
+| AV1 - Copa do Mundo 2026           |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/av1-copa-do-mundo-2026.md) |
 
 ---
 
