@@ -13,6 +13,7 @@
 |------------------------------------|------|
 | Resumo: Banco de Dados             |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/resumo-bd.md)   |
 | Atividade: Desafio Jogos Escolares |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/atividade-1.md) |
+| JOIN e WHERE no SQL                |   [Acesse](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/join-sql.md) |
 
 ---
 
