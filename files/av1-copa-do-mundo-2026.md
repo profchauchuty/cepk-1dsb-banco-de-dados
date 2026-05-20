@@ -46,7 +46,7 @@ Ferramentas de Modelagem:
 | SELECAO | id, nome, fk_tecnico, fk_pais |
 | FASE | id, nome_fase |
 | JOGADOR | id, nome, nome_camisa, numero_camisa, posicao, data_nasc, altura, fk_selecao |
-| ARBITRO | id, nome, nacionalidade, categoria |
+| ARBITRO | id, nome, nacionalidade |
 | PARTIDA | id, data_hora, fk_fase, fk_estadio |
 | PARTIDA_SELECAO | fk_partida, fk_selecao |
 | PARTIDA_ARBITRO | fk_partida, fk_arbitro, funcao |
