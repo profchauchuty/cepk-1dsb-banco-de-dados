@@ -52,7 +52,7 @@ Ferramentas de Modelagem:
 | PARTIDA_ARBITRO | fk_partida, fk_arbitro, funcao |
 | EVENTO_PARTIDA | id, fk_partida, minuto, tipo_evento, fk_jogador, fk_selecao |
 | GOL_PARTIDA | id, fk_partida, fk_jogador, fk_selecao, minuto |
-| RESULTADO_PARTIDA | id, fk_partida, fk_selecao_vencedora, fk_selecao_perdedora, tipo_resultado |
+| RESULTADO_PARTIDA | id, fk_partida, fk_selecao_vencedora, fk_selecao_perdedora|
 | SUBSTITUICAO | id, fk_partida, fk_jogador_sai, fk_jogador_entra, minuto |
 
 ---
@@ -75,7 +75,6 @@ Ferramentas de Modelagem:
 - Resultado de cada partida  
 - Artilheiros (jogadores com mais gols)  
 - Árbitros por partida  
-- Jogadores mais experientes  
 - Média de gols por partida  
 - Seleções por continente  
 
@@ -96,8 +95,8 @@ Ferramentas de Modelagem:
 
 # Entrega
 
+- Modelo Conceitual 
 - Scripts SQL (DDL e DML)  
-- Diagrama do banco  
 - Consultas SQL  
 - Apresentação  
 
@@ -105,6 +104,6 @@ Ferramentas de Modelagem:
 
 # Desafio Extra
 
-O objetivo deste desafio é demonstrar que o banco de dados pode ser melhorado, expandido e otimizado.
+O objetivo é demonstrar que o banco de dados pode ser melhorado, expandido e otimizado.
 
 Boa sorte.
