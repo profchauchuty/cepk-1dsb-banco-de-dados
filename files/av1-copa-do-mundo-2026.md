@@ -42,7 +42,7 @@ Ferramentas de Modelagem:
 |---|---|
 | PAIS | id, nome, sigla, continente, ranking_fifa |
 | TECNICO | id, nome, data_nasc, nacionalidade |
-| ESTADIO | id, nome, cidade, capacidade, fk_pais |
+| ESTADIO | id, nome, cidade, capacidade, pais |
 | SELECAO | id, nome, fk_tecnico, fk_pais |
 | FASE | id, nome_fase |
 | JOGADOR | id, nome, nome_camisa, numero_camisa, posicao, data_nasc, altura, fk_selecao |
