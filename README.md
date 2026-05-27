@@ -15,6 +15,7 @@
 | Atividade: Desafio Jogos Escolares |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/atividade-1.md) |
 | JOIN e WHERE no SQL                |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/join-sql.md) |
 | AV1 - Copa do Mundo 2026           |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/av1-copa-do-mundo-2026.md) |
+| Atividade: Join e Tabela Associativa | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/exercicios-join.md) |
 
 ---
 
