@@ -16,7 +16,8 @@
 | JOIN e WHERE no SQL                |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/join-sql.md) |
 | AV1 - Copa do Mundo 2026           |   [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/av1-copa-do-mundo-2026.md) |
 | Atividade: Join e Tabela Associativa | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/exercicios-join.md) |
-| Tabela Associativa |               | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/tabela-associativa.md) |
+| MER e DER                          | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/tree/main/files) |
+| Tabela Associativa                | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/tabela-associativa.md) |
 
 ---
 
