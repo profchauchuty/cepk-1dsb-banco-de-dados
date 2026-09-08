@@ -19,6 +19,7 @@
 | Diagrama Entidade Relacionamento   | [Acessar](https://www.devmedia.com.br/mer-e-der-modelagem-de-bancos-de-dados/14332)                              |
 | Tabela Associativa                 | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/tabela-associativa.md)       |
 | Cláusulas                          | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/clausulas.md)                |
+| Views                              | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/views.md)                    |
 
 ---
 
