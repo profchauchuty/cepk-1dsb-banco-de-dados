@@ -21,6 +21,8 @@
 | Cláusulas                          | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/clausulas.md)                |
 | Views                              | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/views.md)                    |
 | Functions e Procedures             | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/functions_e_procedures.md)   |
+| Triggers                           | [Acessar](https://github.com/profchauchuty/cepk-1dsb-banco-de-dados/blob/main/files/triggers.md)   |
+
 ---
 
 ## 🛠 Ferramentas
